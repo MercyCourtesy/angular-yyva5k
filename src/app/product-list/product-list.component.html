@@ -1,6 +1,11 @@
 <h2>Products</h2>
-
+<input (keyup)="0" #filter/>
+    <!--keyUp-->
+<h2>{{filter.value}}</h2>
 <div *ngFor="let product of products">
+    <div *ngIf="showProduct(product,filter)">
+
+    
   <!-- <h1> {{product.name}}</h1> -->
   <h3>
     <a [title]="product.name + ' details'" [routerLink]="['/products', product.id]">
@@ -15,6 +20,7 @@
   <app-product-alerts [product]="product" (notify)="onNotify()">
 
   </app-product-alerts>
+  </div>
 </div>
 
 <!-- 

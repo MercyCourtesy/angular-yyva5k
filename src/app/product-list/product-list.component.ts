@@ -16,6 +16,9 @@ export class ProductListComponent {
   onNotify() {
     window.alert('You will be notified when this product goes on sale.');
   }
+  showProduct(product, filter){
+    return product.name.toLowerCase().includes(filter.value.toLowerCase())
+  }
 }
 
 /*
